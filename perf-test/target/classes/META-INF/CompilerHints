@@ -9,4 +9,4 @@ inline,org/example/BinarySearch.testBinarySearchRecursive
 inline,org/example/Factorial.testFactorial
 inline,org/example/Factorial.testFactorialRecursive
 inline,org/example/Fibonacci.testFibonacci
-inline,org/example/Fibonacci.testFibonacciRecursive
+inline,org/example/Fibonacci.testFibonacciRecursiveCached

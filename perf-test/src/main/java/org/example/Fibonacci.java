@@ -31,6 +31,8 @@
 
 package org.example;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.BenchmarkMode;
@@ -49,12 +51,20 @@ import org.openjdk.jmh.annotations.Warmup;
 @OutputTimeUnit(TimeUnit.MICROSECONDS)
 public class Fibonacci {
 
-  @Param({"1", "5", "10", "20", "30", "40", "50"})
+  @Param({"1", "5", "10", "20", "30", "40", "50", "100", "200", "300", "400", "500", "1000"})
   public int number;
+
+  private Map<Long, Long> cache;
 
   @Benchmark
   public void testFibonacciRecursive() {
     final var result = fibonacci(number);
+  }
+
+  @Benchmark
+  public void testFibonacciRecursiveCached() {
+    cache = new HashMap<>();
+    final var result = fibonacciCached(number);
   }
 
   @Benchmark
@@ -75,6 +85,21 @@ public class Fibonacci {
       result = i <= 1 ? 1 : prev1 + prev2;
       prev2 = prev1;
       prev1 = result;
+    }
+
+    return result;
+  }
+
+  private long fibonacciCached(final long value) {
+    if (value <= 1) {
+      return 1;
+    }
+
+    var result = cache.get(value);
+
+    if (result == null) {
+      result = fibonacciCached(value - 1) + fibonacciCached(value - 2);
+      cache.put(value, result);
     }
 
     return result;

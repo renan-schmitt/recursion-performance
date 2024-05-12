@@ -6,12 +6,12 @@ org/example/jmh_generated/Fibonacci_jmhType_B1.class
 org/example/jmh_generated/Factorial_jmhType_B3.class
 org/example/jmh_generated/Factorial_testFactorial_jmhTest.class
 org/example/jmh_generated/Factorial_jmhType_B2.class
-org/example/jmh_generated/Fibonacci_testFibonacciRecursive_jmhTest.class
 org/example/jmh_generated/BinarySearch_jmhType_B3.class
 META-INF/BenchmarkList
 org/example/jmh_generated/Factorial_jmhType_B1.class
 org/example/jmh_generated/Factorial_testFactorialRecursive_jmhTest.class
 org/example/jmh_generated/BinarySearch_testBinarySearch_jmhTest.class
+org/example/jmh_generated/Fibonacci_testFibonacciRecursiveCached_jmhTest.class
 org/example/jmh_generated/Fibonacci_testFibonacci_jmhTest.class
 org/example/jmh_generated/BinarySearch_jmhType_B1.class
 org/example/jmh_generated/Fibonacci_jmhType_B3.class
